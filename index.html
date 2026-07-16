@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly Digest Food Delivery 市场信息周报 — LATAM & global delivery market intelligence archive.">
+  <title>Food Delivery Weekly Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="brand">
+        Weekly Digest Food Delivery
+        <span>市场信息周报</span>
+      </h1>
+      <p class="tagline">LATAM Delivery Market Newsletter — historical archive</p>
+    </div>
+  </header>
+
+  <nav class="nav-bar wrap" aria-label="Primary">
+    <a class="current" href="index.html">Archive</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="latest" id="latest" hidden>
+      <p class="latest-label">Latest</p>
+      <a id="latest-link" href="#"></a>
+      <p id="latest-meta"></p>
+    </section>
+
+    <h2 class="section-title">All weeks</h2>
+    <ul class="week-list" id="week-list">
+      <li class="empty-state">Loading archive…</li>
+    </ul>
+  </main>
+
+  <footer class="footer wrap">
+    <p>Internal market intelligence archive. Sources linked in each weekly issue.</p>
+    <p>Add new weeks via <code>data/weeks.json</code> + a page under <code>weeks/</code>.</p>
+  </footer>
+
+  <script>
+    async function loadArchive() {
+      const listEl = document.getElementById("week-list");
+      const latestEl = document.getElementById("latest");
+      try {
+        const res = await fetch("data/weeks.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to load weeks.json");
+        const weeks = await res.json();
+        // Newest first
+        weeks.sort((a, b) => {
+          if (a.year !== b.year) return b.year - a.year;
+          return b.week - a.week;
+        });
+
+        if (!weeks.length) {
+          listEl.innerHTML = '<li class="empty-state">No issues yet.</li>';
+          return;
+        }
+
+        const latest = weeks[0];
+        latestEl.hidden = false;
+        const latestLink = document.getElementById("latest-link");
+        latestLink.href = latest.href;
+        latestLink.textContent = latest.label + " · " + latest.rangeDisplay;
+        document.getElementById("latest-meta").textContent = latest.summary || "";
+
+        listEl.innerHTML = weeks.map((w) => `
+          <li>
+            <a href="${w.href}">
+              <span class="week-id">${w.label} (${w.year})</span>
+              <span class="week-range">${w.rangeDisplay}</span>
+            </a>
+          </li>
+        `).join("");
+      } catch (err) {
+        listEl.innerHTML = '<li class="empty-state">Could not load archive. Open via a local/static server (not file://).</li>';
+        console.error(err);
+      }
+    }
+    loadArchive();
+  </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* Food Delivery Weekly Digest — archive */
+
+:root {
+  --ink: #12161c;
+  --ink-soft: #3a424e;
+  --muted: #6b7380;
+  --paper: #eef1f4;
+  --surface: #f8f9fb;
+  --line: #d5dbe3;
+  --accent: #1f5c57;
+  --accent-soft: #d8ebe8;
+  --link: #1a4f8c;
+  --radius: 2px;
+  --max: 42rem;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Source Serif 4", "Georgia", serif;
+  --font-ui: "Sora", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 80% at 100% -10%, #d9e8e6 0%, transparent 55%),
+    radial-gradient(90% 60% at -10% 0%, #dde3ec 0%, transparent 50%),
+    var(--paper);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+/* Header */
+
+.site-header {
+  padding: 2.25rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
+}
+
+.brand span {
+  display: block;
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-top: 0.2rem;
+}
+
+.tagline {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Nav */
+
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-bar a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: var(--accent);
+}
+
+.nav-bar .current {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Latest banner */
+
+.latest {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.15rem;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+}
+
+.latest-label {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+
+.latest a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.latest a:hover {
+  color: var(--accent);
+}
+
+.latest p {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-family: var(--font-ui);
+}
+
+/* Week list */
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 2rem 0 0.75rem;
+}
+
+.week-list {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.week-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.week-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.95rem 0.15rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.week-list a:hover .week-id {
+  color: var(--accent);
+}
+
+.week-id {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.week-range {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.empty-state {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 1rem 0 2rem;
+}
+
+/* Article (week page) */
+
+.article-header {
+  padding: 1.75rem 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+
+.article-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+.meta {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.meta strong {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.digest h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: -0.01em;
+}
+
+.digest h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.35rem 0 0.45rem;
+  color: var(--accent);
+}
+
+.digest p,
+.digest li {
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+.digest p {
+  margin: 0 0 0.85rem;
+}
+
+.digest ul {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+}
+
+.digest li {
+  margin-bottom: 0.45rem;
+}
+
+.digest .country-block {
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.digest .country-block:last-of-type {
+  border-bottom: none;
+}
+
+.digest .country-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+}
+
+.digest .none {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 1rem 0 0;
+}
+
+.digest .company-block {
+  margin-bottom: 1.15rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+/* Mobile polish */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .week-list a {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+  }
+}
