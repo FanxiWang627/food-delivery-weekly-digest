@@ -1,5 +1,27 @@
 [
   {
+    "id": "2026-w38",
+    "week": 38,
+    "year": 2026,
+    "label": "Week 38",
+    "start": "2026-09-14",
+    "end": "2026-09-20",
+    "rangeDisplay": "2026/09/14–2026/09/20",
+    "href": "weeks/2026-w38.html",
+    "summary": "Peru BCRP GDP 3.2% and inflation 4.2%; iFood R$24bn; Uber Eats and DoorDash Costco; DoorDash–Wonder; police probe 99Food hire; Keeta 85.7% SP anchors blocked; Keeta Saudi/HK reshuffle."
+  },
+  {
+    "id": "2026-w37",
+    "week": 37,
+    "year": 2026,
+    "label": "Week 37",
+    "start": "2026-09-07",
+    "end": "2026-09-13",
+    "rangeDisplay": "2026/09/07–2026/09/13",
+    "href": "weeks/2026-w37.html",
+    "summary": "Mexico Aug CPI 3.26%; Colombia Aug CPI 6.24%; Argentina Aug CPI 1.7%; Chile Aug CPI 4.1% and IPoM GDP 0.25–0.75%; Meituan flash new-product zone."
+  },
+  {
     "id": "2026-w36",
     "week": 36,
     "year": 2026,
