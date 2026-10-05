@@ -1,5 +1,27 @@
 [
   {
+    "id": "2026-w40",
+    "week": 40,
+    "year": 2026,
+    "label": "Week 40",
+    "start": "2026-09-28",
+    "end": "2026-10-04",
+    "rangeDisplay": "2026/09/28–2026/10/04",
+    "href": "weeks/2026-w40.html",
+    "summary": "Colombia Banrep 12.25%; Chile Imacec −1.0%; Peru Lima CPI 4.55%; Costa Rica jobless 6.7%; TJSP voids 99Food Keeta bans; Deliveroo Coco robots; Alibaba hairy crabs; JD Honor same-day."
+  },
+  {
+    "id": "2026-w39",
+    "week": 39,
+    "year": 2026,
+    "label": "Week 39",
+    "start": "2026-09-21",
+    "end": "2026-09-27",
+    "rangeDisplay": "2026/09/21–2026/09/27",
+    "href": "weeks/2026-w39.html",
+    "summary": "Mexico Banxico hold 6.50% + Sep 1H CPI 3.42% + July IGAE; Argentina July EMAE −2.9% m/m; Ecuador Aug CPI 1.12%; Deliveroo–Aldi; Meituan HK drone + 300亿; JD 9-min phones."
+  },
+  {
     "id": "2026-w38",
     "week": 38,
     "year": 2026,
